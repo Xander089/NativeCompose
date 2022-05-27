@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             NativeComposeTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting(stringFromJNI())
+                    MessageFromNativeLibrary(stringFromJNI())
                 }
             }
         }
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
+fun MessageFromNativeLibrary(name: String) {
     Text(text = "Hello $name!")
 }
 
@@ -41,6 +41,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     NativeComposeTheme {
-        Greeting("Android")
+        MessageFromNativeLibrary("Android")
     }
 }
